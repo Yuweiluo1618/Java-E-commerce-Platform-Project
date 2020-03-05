@@ -41,7 +41,7 @@ public class DoUserAdd extends HttpServlet {
 		int count = UserDAO.insert(u);
 		//Result:(success or fail)
 		if(count > 0) {
-			response.sendRedirect("admin_user.jsp");
+			response.sendRedirect("/E-commerceShop/manage/admin_douserselect");
 		}else {
 			PrintWriter out = response.getWriter();
 			out.write("<script>");

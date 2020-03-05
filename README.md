@@ -1,14 +1,11 @@
 # Java-E-commerce-Platform-Project
+# TomCat Server MySql JSP Java Sevelet B/S System
+day 1:
 1.User Module(CRUD)
-2.User Table design:
- Field               Type        Constrain
-USER_ID            varchar(32)    Not Null(PK)
-USER_NAME          varchar(20)    Not Null
-USER_PASSWORD      varchar(20)    Not Null
-USER_SEX           varchar(1)     Not Null
-USER_BIRTHDAY      datatime       DEFAULT Null
-USER_IDENTITY      varchar(60)    DEFAULT Null
-USER_EMAIL         varchar(60)    DEFAULT Null
-USER_MOBILE        varchar(11)    DEFAULT Null
-USER_ADDRESS       varchar(200)   NOT NULL
-USER_STATUS        decimal(6,0)   NOT NULL
+2.coded jsp sevelet userDap to achieve user update MySQL
+
+day 2:
+1. coded query from the MySql
+2. split the pages for ResultSet
+3. query based on user search
+
