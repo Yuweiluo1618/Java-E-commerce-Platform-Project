@@ -46,6 +46,10 @@ public class DoUserSelect extends HttpServlet {
 		request.setAttribute("tpage", arr[1]);
 		request.setAttribute("cpage", cpage);
 		
+		if(keyWord != null) {
+			request.setAttribute("searchParams","&keywords="+keyWord);
+		}
+		
 		request.getRequestDispatcher("admin_user.jsp").forward(request, response);
 	}
 

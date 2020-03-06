@@ -24,7 +24,7 @@
 						</select></td-->
 						<th width="70">Search:</th>
 						<td><input class="common-text" placeholder="Keyword"
-							name="keywords" value="" id="" type="text"></td>
+							name="keywords" value="${param.keywords}" id="" type="text"></td>
 						<td><input class="btn btn-primary btn2" name="sub" value="Search"
 							type="submit"></td>
 					</tr>
@@ -65,7 +65,7 @@
 						<td>${u.USER_MOBILE}</td>
 						
 						<td>
-							<a class="link-update" href="#">Revise</a>
+							<a class="link-update" href="admin_touserupdate?id=${u.USER_ID}&cpage=${cpage}">Revise</a>
 						    <a class="link-del" href="#">Del</a>
 						</td>
 					</tr>
@@ -74,10 +74,10 @@
 				<div class="list-page">
 					Total Record: ${tsum}
 					Current Page: ${cpage}/${tpage} 
-					<a href="admin_douserselect?cp=1">First Page</a>
-					<a href="admin_douserselect?cp=${cpage-1 < 1 ? 1:cpage-1 }">Previous</a>
-					<a href="admin_douserselect?cp=${cpage+1 > tpage ? tpage:cpage+1}">Next</a>
-					<a href="admin_douserselect?cp=${tpage}">Last Page</a>
+					<a href="admin_douserselect?cp=1${searchParams}">First Page</a>
+					<a href="admin_douserselect?cp=${cpage-1 < 1 ? 1:cpage-1}${searchParams}">Previous</a>
+					<a href="admin_douserselect?cp=${cpage+1 > tpage ? tpage:cpage+1}${searchParams}">Next</a>
+					<a href="admin_douserselect?cp=${tpage}${searchParams}">Last Page</a>
 				</div>
 			</div>
 		</form>
