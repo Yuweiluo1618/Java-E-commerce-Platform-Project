@@ -33,20 +33,18 @@
 		</div>
 	</div>
 	<div class="result-wrap">
-		<form name="myform" id="myform" method="post">
+		<form action="/E-commerceShop/manage/admin_douserdel" id="myform" method="post">
 			<div class="result-title">
 				<div class="result-list">
 					<a href="admin_useradd.jsp"><i class="icon-font"></i>New User</a>
-					<a id="batchDel" href="javascript:void(0)"><i class="icon-font"></i>批量删除</a>
-					<a id="updateOrd" href="javascript:void(0)"><i
-						class="icon-font"></i>更新排序</a>
+					<a id="batchDel" href="javascript:delmore('Are you sure you want to delete this?','myform')"> <i class="icon-font"></i>Delete All</a>
+					<!--  a id="updateOrd" href="javascript:void(0)"><i class="icon-font"></i>更新排序</a> -->
 				</div>
 			</div>
 			<div class="result-content">
 				<table class="result-tab" width="100%">
 					<tr>
-						<th class="tc" width="5%"><input class="allChoose" name=""
-							type="checkbox"></th>
+						<th class="tc" width="5%"><input class="allChoose" name="" onclick ="selall(this)" type="checkbox"></th>
 						<th>ID</th>
 						<th>Name</th>
 						<th>Sex</th>
@@ -66,10 +64,35 @@
 						
 						<td>
 							<a class="link-update" href="admin_touserupdate?id=${u.USER_ID}&cpage=${cpage}">Revise</a>
-						    <a class="link-del" href="#">Del</a>
+						    
+						    <c:if test = "${u.USER_STATUS == 1}">
+						    	<a class="link-del" href="javascript:Delete('Are you sure to deleter [${u.USER_NAME}] User?','/E-commerceShop/manage/admin_douserdel?id=${u.USER_ID}&cpage=${cpage}')">Del</a>
+						    </c:if>
 						</td>
 					</tr>
 				</c:forEach>
+				<script>
+					 function Delete(mess, url){
+						 if(confirm(mess)){
+							 location.href = url;
+						 }
+						}
+					 
+					 function selall(o){
+						 var a = document.getElementsByName("id[]");
+						 for(var i = 0; i < a.length; i++){
+							 a[i].checked = o.checked;
+						 }
+					 }
+					 
+					 function delmore(mess, formname){
+						 if(confirm(mess)){
+							 var form = document.getElementById(formname);
+							 form.submit();
+						 }
+					 }
+					 
+				</script>
 				</table>
 				<div class="list-page">
 					Total Record: ${tsum}

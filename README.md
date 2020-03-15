@@ -13,4 +13,6 @@ day 2:
 day 3:
 1. coded user information modifier
 
+day 4:
+1. coded delete one record or multiple records
 

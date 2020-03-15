@@ -142,5 +142,13 @@ public class UserDAO {
 				u.getUSER_ADDRESS(), u.getUSER_STATUS(),  u.getUSER_ID()};
 		return Basedao.exectuIUD(sql, params);
 	}
+	
+	//delete
+	public static int del(String id) {
+		String sql = "delete from lmonkey_user where USER_ID = ? and USER_STATUS != 2";
+		Object[] params = {id};
+		return Basedao.exectuIUD(sql, params);
+		
+	}
 }
 	
