@@ -16,3 +16,6 @@ day 3:
 day 4:
 1. coded delete one record or multiple records
 
+day 5:
+1. update user registration UI
+
