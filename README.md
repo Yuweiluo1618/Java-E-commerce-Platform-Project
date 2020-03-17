@@ -3,7 +3,7 @@
 
 day 1:
 1. User Module(CRUD)
-2. coded jsp sevelet userDap to achieve user update MySQL
+2. coded jsp sevelet userDao to achieve user update MySQL
 
 day 2:
 1. coded query from the MySql
