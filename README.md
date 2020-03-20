@@ -24,4 +24,11 @@ day 5:
 
 day 6:
 1. implemneted verification generator
-2. updated the front-end verification 
+2. updated the front-end verification
+
+day 7:
+1. implmented js code check username password repassword and verify code is not null
+2. implmented Ajax code check the use_ID unique (connect MySQL check) and verify code correction.
+
+![](README_files/4.jpg)
+![](README_files/5.jpg)
