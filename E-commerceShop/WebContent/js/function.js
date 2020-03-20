@@ -20,6 +20,16 @@ function CheckItem(obj){
 			if(obj.value == ""){
 				msgBox.html('required username');
 				msgBox.addClass('error');
+			}else{
+				var url = "usernamecheck?name="+encodeURI($(obj).val()) +"&"+ new Date().getTime();
+				$.get(url,function(date){
+					if(date == "false"){
+						msgBox.html('username already been used');
+						msgBox.addClass('error');
+					}else{
+						msg.box.html().removeClass('error');
+					}
+				});
 			}
 			break;
 		
@@ -52,6 +62,16 @@ function CheckItem(obj){
 			if(obj.value == ""){
 				numShow.html('required verify code');
 				numShow.addClass('error');
+			}else{
+				var url = "checkusernum?num="+ encodeURI($(obj).val()) +"&"+ new Date().getTime();
+				$.get(url, function(numdate){
+					if(numdate == "false"){
+						numShow.html('verify code wrong');
+						numShow.addClass('error');
+					}else{
+						numShow.html().removeClass('error');
+					}
+				});
 			}
 			
 			break;

@@ -64,6 +64,31 @@ public class UserDAO {
 		return list;
 
 	}
+	
+	public static int selectByName(String id) {
+		int count = 0;
+		Connection conn = Basedao.getConn();
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		try {
+			String sql = "select count(*) from lmonkey_user where USER_ID = ?";
+
+			ps = conn.prepareStatement(sql);
+			ps.setString(1,id);
+
+			rs = ps.executeQuery();
+
+			while (rs.next()) {
+				count = rs.getInt(1);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			Basedao.closeAll(rs, ps, conn);
+		}
+
+		return count;
+	}
 
 	// obtain total records and total pages
 	public static int[] totalPage(int count, String keyword) {
