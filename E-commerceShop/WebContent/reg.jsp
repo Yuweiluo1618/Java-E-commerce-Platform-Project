@@ -25,7 +25,7 @@
 </head>
 <body><!-------------------reg-------------------------->
 <div class="reg">
-    <form action="#" method="post"><h1><a href="/E-commerceShop/reg.jsp"><img src="img/temp/UBC.png"></a></h1>
+    <form action="register" method="post" onsubmit = "return checkForm(this)"><h1><a href="/E-commerceShop/reg.jsp"><img src="img/temp/UBC.png"></a></h1>
         <h1 style="padding:0px;margin:0px;font-size:30px;background:#3344AA;text-align:center;line-height:60px;color:#FFFFFF">User Registration</h1>
         <p><input type="text" name="username" value="" onfocus="FocusItem(this)" onblur="CheckItem(this)" placeholder="username"><span></span></p>
         <p><input type="text" name="name" value="" onfocus="FocusItem(this)" onblur="CheckItem(this)" placeholder="realname"><span></span></p>

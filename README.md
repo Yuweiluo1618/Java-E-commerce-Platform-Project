@@ -40,3 +40,7 @@ day 7:
 
 ![](README_files/4.jpg)
 ![](README_files/5.jpg)
+
+3/22:
+1. Front-end Verification finished
+2. 
