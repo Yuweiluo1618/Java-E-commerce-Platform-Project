@@ -1,6 +1,14 @@
 # Java-E-commerce-Platform-Project
 # TomCat Server MySql JSP Java Sevelet B/S System
 
+Main Features:
+1. Project demand breakdown and basic environment construction
+2. The actual development process of the user module
+3. Standard project registration and login process implementation
+4. Front menu design and implementation of classification module
+5. Commodity module and front-end merchandise display design and implementation
+6. Design and implementation of shopping process
+
 day 1:
 1. User Module(CRUD)
 2. coded jsp sevelet userDao to achieve user update MySQL
