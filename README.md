@@ -8,6 +8,7 @@ Main Features:
 4. Front menu design and implementation of classification module
 5. Commodity module and front-end merchandise display design and implementation
 6. Design and implementation of shopping process
+![](README_files/1.png)
 
 day 1:
 1. User Module(CRUD)
