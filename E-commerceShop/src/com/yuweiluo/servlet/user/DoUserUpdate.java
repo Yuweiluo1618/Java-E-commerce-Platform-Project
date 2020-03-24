@@ -48,7 +48,7 @@ public class DoUserUpdate extends HttpServlet {
 		}else {
 			PrintWriter out = response.getWriter();
 			out.write("<script>");
-			out.write("alert('Modified fail')");
+			out.write("alert('Modified fail');");
 			out.write("location.href='manage/admin_touserupdate?id="+username+"'");
 			out.write("</script>");
 		}

@@ -20,7 +20,7 @@ public class Basedao {
 	public static Connection getConn() {
 		Connection conn = null;
 		try {
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/ecommerceshop", "root", "333");
+			conn = DriverManager.getConnection("jdbc:mysql://localhost/ecommerceshop", "root", "333");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

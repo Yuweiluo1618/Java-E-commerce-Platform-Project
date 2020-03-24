@@ -33,7 +33,7 @@
         <p><input type="text" name="repassword" value="" onfocus="FocusItem(this)" onblur="CheckItem(this)" placeholder="retype password"><span></span></p>
         <p>
         <input type="radio" style = "width:15px;height:15px" name="sex" value="T" checked = "checked"> Male 
-        <input type="radio" style = "width:15px;height:15px" name="sex" value="T" checked = "checked"> Female
+        <input type="radio" style = "width:15px;height:15px" name="sex" value="T" > Female
         </p>
         <p><input type="text" name="birthday" value="" onfocus = "c.show(this)" placeholder="birthday"></p>
         <p><input type="text" name="email" value="" placeholder="email"></p>

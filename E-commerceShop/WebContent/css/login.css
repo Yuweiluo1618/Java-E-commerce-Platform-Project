@@ -28,7 +28,7 @@ html, body {
     padding: 20px 0;
     z-index: 10;
     background: #fff;
-    padding-left:50px
+    padding-left:50px;
 }
 
 .msg-warn {

@@ -43,4 +43,6 @@ day 7:
 
 3/22:
 1. Front-end Verification finished
-2. 
+
+3/24
+1. Add the servlet filter to check the informmation correctness
