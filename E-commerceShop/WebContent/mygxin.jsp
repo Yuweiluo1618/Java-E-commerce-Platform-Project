@@ -78,7 +78,7 @@
     <div class="wrapper clearfix">
         <div class="zuo fl">
             <h3><a href="#"><img src="img/tx.png"/></a>
-                <p class="clearfix"><span class="fl">[${name.USER_NAME}]</span><span class="fr">[Quit]</span></p></h3>
+                <p class="clearfix"><span class="fl">[${name.USER_NAME}]</span><span class="fr"><a href = "logout">[Quit]</a></span></p></h3>
             <div><h4>My Transaction</h4>
                 <ul>
                     <li><a href="cart.html">My Cart</a></li>
@@ -111,7 +111,7 @@
                 <div class="clearfix"><a href="#" class="fl"><img src="img/gxin3.jpg"/></a>
                     <p class="fl"><span>Feedback：<strong>0</strong></span><a href="myprod.html">More Information></a></p></div>
                 <div class="clearfix"><a href="#" class="fl"><img src="img/gxin4.jpg"/></a>
-                    <p class="fl"><span>Favourite：<strong>0</strong></span><a href="#">More Information></a></p></div>
+                    <p class="fl"><span>Favorite：<strong>0</strong></span><a href="#">More Information></a></p></div>
             </div>
         </div>
     </div>
