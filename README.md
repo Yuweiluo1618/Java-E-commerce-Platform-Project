@@ -62,4 +62,9 @@ day 7:
 3. Modified the Personal Information Page
 ![](README_files/6.jpg)
 ![](README_files/7.jpg)
-4. Impemented normal user login logout(logour servlet)
+4. Impemented normal user login(Login servlet) logout(logout servlet)
+
+3/25
+1. Modified the administrator login(login Servlet) logout(logout servlet)
+![](README_files/8.jpg)
+2. 

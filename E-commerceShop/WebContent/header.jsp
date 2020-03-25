@@ -13,6 +13,9 @@
              <c:if test = "${isLogin == 1}">
             		<b>Hello:</b> <a href="login.jsp" id="login">${name.USER_NAME}</a>
             </c:if>
+             <c:if test = "${isAdminLogin == 1}">
+            		<a href="/E-commerceShop/manage/admin_index.jsp" id="login">System</a>
+            </c:if>
             </p>
                 <form action="#" method="get" class="fl"><input type="text" placeholder="热门搜索：干花花瓶"/><input
                         type="button"/></form>

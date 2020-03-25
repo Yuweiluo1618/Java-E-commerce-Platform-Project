@@ -14,35 +14,41 @@ import com.yuweiluo.entity.LMONKEY_USER;
 import com.yuweiluo.service.UserDAO;
 
 /**
- * Servlet implementation class Login
+ * Servlet implementation class adminLogin
  */
-@WebServlet("/login")
-public class Login extends HttpServlet {
+@WebServlet("/manage/adminlogin")
+public class adminLogin extends HttpServlet {
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html;charset=utf-8");
-		
 		String username = request.getParameter("userName");
 		String password = request.getParameter("passWord");
-		int count = UserDAO.selectByNM(username,password);
-		if(count > 0) {
+		int count = UserDAO.selectByNM(username, password);
+		if (count > 0) {
+			LMONKEY_USER user = UserDAO.selectAdmin(username, password);
 			HttpSession session = request.getSession();
-			LMONKEY_USER user = UserDAO.selectAdmin(username,password);
 			session.setAttribute("name", user);
 			session.setAttribute("isLogin", "1");
-			response.sendRedirect("index.jsp");
-			
-			
-		}else {
+			if (user.getUSER_STATUS() == 2) {
+				session.setAttribute("isAdminLogin", "1");
+				response.sendRedirect("/E-commerceShop/manage/admin_index.jsp");
+			} else {
+				response.sendRedirect("/E-commerceShop/index.jsp");
+
+			}
+		} else {
 			PrintWriter out = response.getWriter();
 			out.write("<script>");
 			out.write("alert('User Login Fail');");
-			out.write("location.href='login.jsp';");
+			out.write("location.href='/E-commerceShop/manage/login.jsp';");
 			out.write("</script>");
 		}
+
 	}
 
 }
