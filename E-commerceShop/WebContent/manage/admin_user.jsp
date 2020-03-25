@@ -7,7 +7,7 @@
 
 	<div class="crumb-wrap">
 		<div class="crumb-list">
-			<i class="icon-font"></i><a href="index.html">Main</a><span
+			<i class="icon-font"></i><a href="index.jsp">Main</a><span
 				class="crumb-step">&gt;</span><span class="crumb-name">User</span>
 		</div>
 	</div>
