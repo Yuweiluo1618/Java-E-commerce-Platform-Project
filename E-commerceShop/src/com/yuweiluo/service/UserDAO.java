@@ -10,6 +10,33 @@ import com.yuweiluo.dao.Basedao;
 import com.yuweiluo.entity.LMONKEY_USER;
 
 public class UserDAO {
+	
+	public static int selectByNM(String name, String pwd) {
+		int count = 0;
+		Connection conn = Basedao.getConn();
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		try {
+			String sql = "select count(*) from lmonkey_user where USER_ID = ? and USER_PASSWORD = ?";
+
+			ps = conn.prepareStatement(sql);
+			ps.setString(1,name);
+			ps.setString(2, pwd);
+
+			rs = ps.executeQuery();
+
+			while (rs.next()) {
+				count = rs.getInt(1);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			Basedao.closeAll(rs, ps, conn);
+		}
+
+		return count;
+		
+	}
 
 	// add user
 	public static int insert(LMONKEY_USER u) {
@@ -173,6 +200,36 @@ public class UserDAO {
 		String sql = "delete from lmonkey_user where USER_ID = ? and USER_STATUS != 2";
 		Object[] params = {id};
 		return Basedao.exectuIUD(sql, params);
+		
+	}
+	
+	public static LMONKEY_USER selectAdmin(String name, String pwd) {
+		LMONKEY_USER u = null;
+		ResultSet rs = null;
+		Connection conn = Basedao.getConn();
+		PreparedStatement ps = null;
+		try {
+			String sql = "select m.*, DATE_FORMAT(m.USER_BIRTHDAY,'%Y-%m-%d') birthday from lmonkey_user m where USER_ID = ? and USER_PASSWORD = ?";
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, name);
+			ps.setString(2, pwd);
+			rs = ps.executeQuery();
+			while (rs.next()) {
+						u = new LMONKEY_USER(rs.getString("USER_ID"), rs.getString("USER_NAME"),
+						rs.getString("USER_PASSWORD"), rs.getString("USER_SEX"), rs.getString("birthday"),
+						rs.getString("USER_IDENITY_CODE"), rs.getString("USER_EMAIL"), rs.getString("USER_MOBILE"),
+						rs.getString("USER_ADDRESS"), rs.getInt("USER_STATUS"));
+
+			}
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			Basedao.closeAll(rs, ps, conn);
+		}
+
+		return u;
 		
 	}
 }

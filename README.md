@@ -47,3 +47,5 @@ day 7:
 
 3/24
 1. Add the servlet filter to check the informmation correctness
+2. Implemented the Login page(Login.jsp login.sevelet)
+![](README_files/6.jpg)
