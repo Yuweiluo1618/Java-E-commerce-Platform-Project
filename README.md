@@ -1,5 +1,15 @@
 # Java-E-commerce-Platform-Project
-# TomCat Server MySql JSP Java Sevelet B/S System
+
+Tools:
+1. Java EE(Tomcat Server, Java Servlet, JSP, JavaSE, JDBC)
+2. SQL(MySQL Database)
+3. XML
+4. JavaScript, HTML, CSS
+
+Architecture:
+
+![](README_files/1.png)
+
 
 Main Features:
 1. Project demand breakdown and basic environment construction
@@ -9,7 +19,7 @@ Main Features:
 5. Commodity module and front-end merchandise display design and implementation
 6. Design and implementation of shopping process
 
-![](README_files/1.png)
+
 
 day 1:
 1. User Module(CRUD)
