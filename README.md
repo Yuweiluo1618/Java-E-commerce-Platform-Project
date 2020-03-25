@@ -29,7 +29,7 @@ day 2:
 1. coded query from the MySql
 2. split the pages for ResultSet
 3. query based on user search
-![](README_files/2.jpg)
+![](README_files/10.jpg)
 
 day 3:
 1. coded user information modifier
@@ -40,7 +40,7 @@ day 4:
 day 5:
 1. update user registration UI
 ![](README_files/1.jpg)
-![](README_files/3.jpg)
+![](README_files/2.jpg)
 
 
 day 6:
