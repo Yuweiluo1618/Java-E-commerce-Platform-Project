@@ -67,4 +67,4 @@ day 7:
 3/25
 1. Modified the administrator login(login Servlet) logout(logout servlet)
 ![](README_files/8.jpg)
-2. 
+![](README_files/9.jpg)
