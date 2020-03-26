@@ -23,7 +23,9 @@ Main Features:
 
 day 1:
 1. Create User Infromation table and import to the MySQL 
+
 ![](README_files/3.jpg)
+
 2. User Module(CRUD)
 3. coded jsp sevelet userDao to achieve user update MySQL
 
