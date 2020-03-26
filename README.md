@@ -69,3 +69,4 @@ day 7:
 1. Modified the administrator login(login Servlet) logout(logout servlet)
 ![](README_files/8.jpg)
 ![](README_files/9.jpg)
+2. Implemented the administrator filter to protect administrator web page need login to access.

@@ -26,7 +26,7 @@ public class AdminLogout extends HttpServlet {
 		HttpSession session =  request.getSession();
 		session.removeAttribute("name");
 		session.removeAttribute("isLogin");
-		session.removeAttribute("isAdmminLogin");
+		session.removeAttribute("isAdminLogin");
 		
 		PrintWriter out = response.getWriter();
 		out.write("<script>");
