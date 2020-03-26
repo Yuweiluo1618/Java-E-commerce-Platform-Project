@@ -13,3 +13,22 @@ CREATE TABLE `lmonkey_user` (
   `USER_STATUS` decimal(6,0) NOT NULL,
   PRIMARY KEY (`USER_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+//Product Table
+DROP TABLE IF EXISTS `lmonkey_category`;
+CREATE TABLE `lmonkey_category` (
+  `CATE_ID` int(10) NOT NULL AUTO_INCREMENT,
+  `CATE_NAME` varchar(20) NOT NULL,
+  `CATE_PARENT_NAME` decimal(10,0) NOT NULL,
+  PRIMARY KEY (`CATE_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+insert into lmonkey_category values(1,'one','0')
+insert into lmonkey_category values(2,'two','0');
+insert into lmonkey_category values(3,'three','0');
+insert into lmonkey_category values(4,'aaa','1');
+insert into lmonkey_category values(5,'bbb','1');
+insert into lmonkey_category values(6,'ccc','2');
+insert into lmonkey_category values(7,'ddd','2');
+insert into lmonkey_category values(8,'eee','3');
+insert into lmonkey_category values(9,'fff','3');

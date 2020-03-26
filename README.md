@@ -22,8 +22,10 @@ Main Features:
 
 
 day 1:
-1. User Module(CRUD)
-2. coded jsp sevelet userDao to achieve user update MySQL
+1. Create User Infromation table and import to the MySQL 
+![](README_files/3.jpg)
+2. User Module(CRUD)
+3. coded jsp sevelet userDao to achieve user update MySQL
 
 day 2:
 1. coded query from the MySql
@@ -70,3 +72,7 @@ day 7:
 ![](README_files/8.jpg)
 ![](README_files/9.jpg)
 2. Implemented the administrator filter to protect administrator web page need login to access.
+
+3/26
+1. Create the category table and immport to the Mysql database
+![](README_files/11.jpg)
