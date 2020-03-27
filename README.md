@@ -78,3 +78,10 @@ day 7:
 3/26
 1. Create the category table and immport to the Mysql database
 ![](README_files/11.jpg)
+
+3/27
+1. Create the Category entity
+2. Create Category Query
+![](README_files/12.jpg)
+3. Create Category Add
+![](README_files/13.jpg)

@@ -1,0 +1,51 @@
+package com.yuweiluo.service;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+import com.yuweiluo.dao.Basedao;
+import com.yuweiluo.entity.LMONKEY_CATEGORY;
+import com.yuweiluo.entity.LMONKEY_USER;
+
+/*
+ * obtain all the category
+ */
+public class CategoryDAO {
+	public static ArrayList<LMONKEY_CATEGORY> selectAll() {
+		ArrayList<LMONKEY_CATEGORY> list = new ArrayList<LMONKEY_CATEGORY>();
+		ResultSet rs = null;
+		Connection conn = Basedao.getConn();
+		PreparedStatement ps = null;
+		try {
+			String sql = "select * from lmonkey_category";
+			ps = conn.prepareStatement(sql);
+			rs = ps.executeQuery();
+			while (rs.next()) {
+				LMONKEY_CATEGORY cate = new LMONKEY_CATEGORY
+						(rs.getInt("CATE_ID"), 
+						rs.getString("CATE_NAME"),
+						rs.getInt("CATE_PARENT_NAME"));
+
+				list.add(cate);
+			}
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			Basedao.closeAll(rs, ps, conn);
+		}
+
+		return list;
+
+	}
+	
+	public static int insert(LMONKEY_CATEGORY cate) {
+		String sql = "insert into lmonkey_category values(null,?,?)";
+		Object[] params = {cate.getCATE_NAME(), cate.getCATE_PARENT_ID()};
+		return Basedao.exectuIUD(sql, params);
+	}
+}

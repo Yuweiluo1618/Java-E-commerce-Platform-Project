@@ -10,7 +10,7 @@ import com.yuweiluo.dao.Basedao;
 import com.yuweiluo.entity.LMONKEY_USER;
 
 public class UserDAO {
-	
+
 	public static int selectByNM(String name, String pwd) {
 		int count = 0;
 		Connection conn = Basedao.getConn();
@@ -20,7 +20,7 @@ public class UserDAO {
 			String sql = "select count(*) from lmonkey_user where USER_ID = ? and USER_PASSWORD = ?";
 
 			ps = conn.prepareStatement(sql);
-			ps.setString(1,name);
+			ps.setString(1, name);
 			ps.setString(2, pwd);
 
 			rs = ps.executeQuery();
@@ -35,7 +35,7 @@ public class UserDAO {
 		}
 
 		return count;
-		
+
 	}
 
 	// add user
@@ -91,7 +91,7 @@ public class UserDAO {
 		return list;
 
 	}
-	
+
 	public static int selectByName(String id) {
 		int count = 0;
 		Connection conn = Basedao.getConn();
@@ -101,7 +101,7 @@ public class UserDAO {
 			String sql = "select count(*) from lmonkey_user where USER_ID = ?";
 
 			ps = conn.prepareStatement(sql);
-			ps.setString(1,id);
+			ps.setString(1, id);
 
 			rs = ps.executeQuery();
 
@@ -129,15 +129,15 @@ public class UserDAO {
 				sql = "select count(*) from lmonkey_user where USER_NAME like ?";
 				ps = conn.prepareStatement(sql);
 				ps.setString(1, "%" + keyword + "%");
-				
+
 			} else {
 				sql = "select count(*) from lmonkey_user";
 				ps = conn.prepareStatement(sql);
-				
+
 			}
-			
+
 			rs = ps.executeQuery();
-			
+
 			while (rs.next()) {
 				arr[0] = rs.getInt(1);
 				if (arr[0] % count == 0) {
@@ -155,7 +155,7 @@ public class UserDAO {
 
 		return arr;
 	}
-	
+
 	//
 	public static LMONKEY_USER selectByID(String id) {
 		LMONKEY_USER u = null;
@@ -168,10 +168,10 @@ public class UserDAO {
 			ps.setString(1, id);
 			rs = ps.executeQuery();
 			while (rs.next()) {
-						u = new LMONKEY_USER(rs.getString("USER_ID"), rs.getString("USER_NAME"),
-						rs.getString("USER_PASSWORD"), rs.getString("USER_SEX"), rs.getString("birthday"),
-						rs.getString("USER_IDENITY_CODE"), rs.getString("USER_EMAIL"), rs.getString("USER_MOBILE"),
-						rs.getString("USER_ADDRESS"), rs.getInt("USER_STATUS"));
+				u = new LMONKEY_USER(rs.getString("USER_ID"), rs.getString("USER_NAME"), rs.getString("USER_PASSWORD"),
+						rs.getString("USER_SEX"), rs.getString("birthday"), rs.getString("USER_IDENITY_CODE"),
+						rs.getString("USER_EMAIL"), rs.getString("USER_MOBILE"), rs.getString("USER_ADDRESS"),
+						rs.getInt("USER_STATUS"));
 
 			}
 
@@ -185,24 +185,24 @@ public class UserDAO {
 		return u;
 
 	}
-	
-	//update
+
+	// update
 	public static int update(LMONKEY_USER u) {
 		String sql = "update lmonkey_user set USER_NAME = ?, USER_PASSWORD = ?, USER_SEX = ?, USER_BIRTHDAY=DATE_FORMAT(?, '%Y-%m-%d'), USER_IDENITY_CODE = ?, USER_EMAIL = ?, USER_MOBILE = ?, USER_ADDRESS = ?,  USER_STATUS = ? where USER_ID = ?";
-		Object[] params = { u.getUSER_NAME(), u.getUSER_PASSWOR(), u.getUSER_SEX(),
-				u.getUSER_BIRTHDAY(), u.getUSER_IDENITY_CODE(), u.getUSER_EMAIL(), u.getUSER_MOBILE(),
-				u.getUSER_ADDRESS(), u.getUSER_STATUS(),  u.getUSER_ID()};
+		Object[] params = { u.getUSER_NAME(), u.getUSER_PASSWOR(), u.getUSER_SEX(), u.getUSER_BIRTHDAY(),
+				u.getUSER_IDENITY_CODE(), u.getUSER_EMAIL(), u.getUSER_MOBILE(), u.getUSER_ADDRESS(),
+				u.getUSER_STATUS(), u.getUSER_ID() };
 		return Basedao.exectuIUD(sql, params);
 	}
-	
-	//delete
+
+	// delete
 	public static int del(String id) {
 		String sql = "delete from lmonkey_user where USER_ID = ? and USER_STATUS != 2";
-		Object[] params = {id};
+		Object[] params = { id };
 		return Basedao.exectuIUD(sql, params);
-		
+
 	}
-	
+
 	public static LMONKEY_USER selectAdmin(String name, String pwd) {
 		LMONKEY_USER u = null;
 		ResultSet rs = null;
@@ -215,10 +215,10 @@ public class UserDAO {
 			ps.setString(2, pwd);
 			rs = ps.executeQuery();
 			while (rs.next()) {
-						u = new LMONKEY_USER(rs.getString("USER_ID"), rs.getString("USER_NAME"),
-						rs.getString("USER_PASSWORD"), rs.getString("USER_SEX"), rs.getString("birthday"),
-						rs.getString("USER_IDENITY_CODE"), rs.getString("USER_EMAIL"), rs.getString("USER_MOBILE"),
-						rs.getString("USER_ADDRESS"), rs.getInt("USER_STATUS"));
+				u = new LMONKEY_USER(rs.getString("USER_ID"), rs.getString("USER_NAME"), rs.getString("USER_PASSWORD"),
+						rs.getString("USER_SEX"), rs.getString("birthday"), rs.getString("USER_IDENITY_CODE"),
+						rs.getString("USER_EMAIL"), rs.getString("USER_MOBILE"), rs.getString("USER_ADDRESS"),
+						rs.getInt("USER_STATUS"));
 
 			}
 
@@ -230,7 +230,6 @@ public class UserDAO {
 		}
 
 		return u;
-		
+
 	}
 }
-	
