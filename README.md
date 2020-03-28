@@ -85,3 +85,9 @@ day 7:
 ![](README_files/12.jpg)
 3. Create Category Add
 ![](README_files/13.jpg)
+
+3/28
+1. Impemented the Category modified function
+![](README_files/14.jpg)
+![](README_files/15.jpg)
+![](README_files/16.jpg)

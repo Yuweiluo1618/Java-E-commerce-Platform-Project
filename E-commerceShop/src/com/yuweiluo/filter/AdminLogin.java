@@ -46,7 +46,7 @@ public class AdminLogin implements Filter {
 		
 		HttpSession session = req.getSession();
 		String flag = (String) session.getAttribute("isAdminLogin");
-		System.out.println(flag);
+
 		String request_uri = req.getRequestURI();
 		String ctxPath = req.getContextPath();
 		String uri = request_uri.substring(ctxPath.length());

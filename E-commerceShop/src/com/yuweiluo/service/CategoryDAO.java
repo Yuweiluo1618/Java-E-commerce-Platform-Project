@@ -43,9 +43,49 @@ public class CategoryDAO {
 
 	}
 	
+	// Insert new category
 	public static int insert(LMONKEY_CATEGORY cate) {
 		String sql = "insert into lmonkey_category values(null,?,?)";
 		Object[] params = {cate.getCATE_NAME(), cate.getCATE_PARENT_ID()};
+		return Basedao.exectuIUD(sql, params);
+	}
+	
+	
+	// query category by ID
+	public static LMONKEY_CATEGORY selectById(int id) {
+		LMONKEY_CATEGORY cate = null;
+		ResultSet rs = null;
+		Connection conn = Basedao.getConn();
+		PreparedStatement ps = null;
+		try {
+			String sql = "select * from lmonkey_category  where CATE_ID = ?";
+			ps = conn.prepareStatement(sql);
+			ps.setInt(1, id);
+			rs = ps.executeQuery();
+			while (rs.next()) {
+				cate = new LMONKEY_CATEGORY(rs.getInt("CATE_ID"), 
+											rs.getString("CATE_NAME"), 
+											rs.getInt("CATE_PARENT_NAME"));
+
+			}
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			Basedao.closeAll(rs, ps, conn);
+		}
+
+		return cate;
+
+	}
+	
+	//update category
+	public static int update(LMONKEY_CATEGORY cate) {
+		String sql = "update lmonkey_category set CATE_NAME = ?, CATE_PARENT_NAME = ? where CATE_ID = ?";
+		Object[] params = { cate.getCATE_NAME(), 
+							cate.getCATE_PARENT_ID(),
+							cate.getCATE_ID()};
 		return Basedao.exectuIUD(sql, params);
 	}
 }
