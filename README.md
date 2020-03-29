@@ -91,3 +91,5 @@ day 7:
 ![](README_files/14.jpg)
 ![](README_files/15.jpg)
 ![](README_files/16.jpg)
+2. Implemented the Category delete (need more work on this part skip it today) 
+![](README_files/17.jpg)

@@ -4,7 +4,6 @@
 <%@ include file="admin_menu.jsp"%>
 <!--/sidebar-->
 <div class="main-wrap">
-
 	<div class="crumb-wrap">
 		<div class="crumb-list">
 			<i class="icon-font"></i><a href="index.jsp">Main</a><span
@@ -16,7 +15,7 @@
 			<div class="result-title">
 				<div class="result-list">
 					<a href="/E-commerceShop/manage/admin_tocateadd"><i class="icon-font"></i>New Category</a>
-					<a id="batchDel" href="javascript:delmore('Are you sure you want to delete this?','myform')"> <i class="icon-font"></i>Delete All</a>
+					
 					<!--  a id="updateOrd" href="javascript:void(0)"><i class="icon-font"></i>更新排序</a> -->
 				</div>
 			</div>
@@ -33,14 +32,14 @@
 								<tr>
 									<td>${cate.CATE_ID}</td>
 									<td>${cate.CATE_NAME}</td>
-									<td><a href = "admin_tocateupdate?id=${cate.CATE_ID}">Modify</a> <a href = "">Delete</a></td>
+									<td><a href = "admin_tocateupdate?id=${cate.CATE_ID}">Modify</a> <a href = "javascript:catedel(${cate.CATE_ID})">Delete</a></td>
 								</tr>
 							<c:forEach var = "zcate" items = "${cateList}">
 								<c:if test = "${zcate.CATE_PARENT_ID == cate.CATE_ID}">
 								<tr>
 									<td>${zcate.CATE_ID}</td>
 									<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${zcate.CATE_NAME}</td>
-									<td><a href = "admin_tocateupdate?id=${zcate.CATE_ID}">Modify</a> <a href = "">Delete</a></td>
+									<td><a href = "admin_tocateupdate?id=${zcate.CATE_ID}">Modify</a> <a href = "javascript:catedel(${zcate.CATE_ID})">Delete</a></td>
 								</tr>
 								</c:if>
 							</c:forEach>
@@ -48,9 +47,9 @@
 					</c:forEach>
 				
 				<script>
-					 function Delete(mess, url){
-						 if(confirm(mess)){
-							 location.href = url;
+					 function catedel(id){
+						 if(confirm("Are you sure to delete the category?")){
+							 location.href = "admin_docatedel?id="+id;
 						 }
 						}		 
 				</script>

@@ -88,4 +88,11 @@ public class CategoryDAO {
 							cate.getCATE_ID()};
 		return Basedao.exectuIUD(sql, params);
 	}
+	
+	public static int del(int id) {
+		String sql = "delete from LMONKEY_CATEGORY where CATE_ID = ?";
+		Object[] params = {id};
+		return Basedao.exectuIUD(sql, params);
+		
+	}
 }
