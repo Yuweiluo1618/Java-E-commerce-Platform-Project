@@ -93,3 +93,7 @@ day 7:
 ![](README_files/16.jpg)
 2. Implemented the Category delete (need more work on this part skip it today) 
 ![](README_files/18.jpg)
+
+3/29
+1. Update the home page category
+![](README_files/17.jpg)

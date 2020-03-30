@@ -8,12 +8,14 @@ import java.util.ArrayList;
 
 import com.yuweiluo.dao.Basedao;
 import com.yuweiluo.entity.LMONKEY_CATEGORY;
-import com.yuweiluo.entity.LMONKEY_USER;
+
 
 /*
  * obtain all the category
  */
 public class CategoryDAO {
+	
+	//obtain all categories
 	public static ArrayList<LMONKEY_CATEGORY> selectAll() {
 		ArrayList<LMONKEY_CATEGORY> list = new ArrayList<LMONKEY_CATEGORY>();
 		ResultSet rs = null;
@@ -21,6 +23,41 @@ public class CategoryDAO {
 		PreparedStatement ps = null;
 		try {
 			String sql = "select * from lmonkey_category";
+			ps = conn.prepareStatement(sql);
+			rs = ps.executeQuery();
+			while (rs.next()) {
+				LMONKEY_CATEGORY cate = new LMONKEY_CATEGORY
+						(rs.getInt("CATE_ID"), 
+						rs.getString("CATE_NAME"),
+						rs.getInt("CATE_PARENT_NAME"));
+
+				list.add(cate);
+			}
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			Basedao.closeAll(rs, ps, conn);
+		}
+
+		return list;
+
+	}
+	
+	//obtain sub-category from front-end
+	public static ArrayList<LMONKEY_CATEGORY> selectCat(String flag) {
+		ArrayList<LMONKEY_CATEGORY> list = new ArrayList<LMONKEY_CATEGORY>();
+		ResultSet rs = null;
+		Connection conn = Basedao.getConn();
+		PreparedStatement ps = null;
+		try {
+			String sql = null;
+			if(flag != null && flag.equals("father")) {
+				sql = "select * from lmonkey_category where CATE_PARENT_NAME = 0";
+			}else {
+				sql = "select * from lmonkey_category where CATE_PARENT_NAME != 0";
+			}
 			ps = conn.prepareStatement(sql);
 			rs = ps.executeQuery();
 			while (rs.next()) {
