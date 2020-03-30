@@ -23,7 +23,9 @@ Main Features:
 
 day 1:
 1. Create User Infromation table and import to the MySQL 
+
 ![](README_files/3.jpg)
+
 2. Create the User Information Java Beans(LMONKEY_USER.java)
 3. User Module(CRUD)
 4. coded jsp sevelet userDao to achieve user update MySQL
