@@ -14,7 +14,7 @@ CREATE TABLE `lmonkey_user` (
   PRIMARY KEY (`USER_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-//Product Table
+//Product Category Table
 DROP TABLE IF EXISTS `lmonkey_category`;
 CREATE TABLE `lmonkey_category` (
   `CATE_ID` int(10) NOT NULL AUTO_INCREMENT,
@@ -23,7 +23,7 @@ CREATE TABLE `lmonkey_category` (
   PRIMARY KEY (`CATE_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-insert into lmonkey_category values(1,'one','0')
+insert into lmonkey_category values(1,'one','0');
 insert into lmonkey_category values(2,'two','0');
 insert into lmonkey_category values(3,'three','0');
 insert into lmonkey_category values(4,'aaa','1');
@@ -32,3 +32,17 @@ insert into lmonkey_category values(6,'ccc','2');
 insert into lmonkey_category values(7,'ddd','2');
 insert into lmonkey_category values(8,'eee','3');
 insert into lmonkey_category values(9,'fff','3');
+
+//Product Table
+DROP TABLE IF EXISTS `lmonkey_product`;
+CREATE TABLE `lmonkey_product` (
+  PRODUCT_ID int(10) NOT NULL AUTO_INCREMENT,
+  PRODUCT_NAME varchar(512) not null,
+  PRODUCT_DESCRIPTION varchar(128) default null,
+  PRODUCT_PRICE decimal(10,2) not null,
+  PRODUCT_STOCK decimal(10,0) default null,
+  PRODUCT_FID decimal(10,0) default null,
+  PRODUCT_CID decimal(10,0) default null,
+  PRODUCT_FILENAME varchar(200) default null,
+  PRIMARY KEY (`PRODUCT_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

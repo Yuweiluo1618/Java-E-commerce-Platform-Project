@@ -17,7 +17,7 @@
             		<a href="/E-commerceShop/manage/admin_index.jsp" id="login">System</a>
             </c:if>
             </p>
-                <form action="#" method="get" class="fl"><input type="text" placeholder="热门搜索：干花花瓶"/><input
+                <form action="#" method="get" class="fl"><input type="text" placeholder="Java"/><input
                         type="button"/></form>
                 <div class="btn fl clearfix"><a href="mygxin.jsp"><img src="img/grzx.png"/></a><a href="#" class="er1"><img
                         src="img/ewm.png"/></a>
