@@ -40,6 +40,7 @@ public class DoUserAdd extends HttpServlet {
 		
 		//Add to Database
 		int count = UserDAO.insert(u);
+		
 		//Result:(success or fail)
 		if(count > 0) {
 			response.sendRedirect("/E-commerceShop/manage/admin_douserselect");

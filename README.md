@@ -105,3 +105,6 @@ day 7:
 3/30
 1. Updated the product(book) add page and servlets to help this page get information from the database
 ![](README_files/17.jpg)
+
+3/31
+1. Implemmented the add new product function since this time need upload the file, so import the external jar pakage(smartupload.jar)

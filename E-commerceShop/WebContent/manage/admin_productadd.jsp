@@ -9,7 +9,7 @@
         </div>
         <div class="result-wrap">
             <div class="result-content">
-                <form action="/E-commerceShop/manage/admin_doproductcate" method="post" enctype ="multipart/form-data" id="myform" name="myform">
+                <form action="/E-commerceShop/manage/admin_doproductadd" method="post" enctype ="multipart/form-data" id="myform" name="myform">
                     <table class="insert-tab" width="100%">
                         <tbody>
                           
