@@ -98,7 +98,10 @@ day 7:
 
 3/29
 1. Update the home page category
-![](README_files/17.jpg)
 2. Create the Product information table and immport to the Mysql database
 ![](README_files/11.jpg)
 3. Create the product Java Bean(LMONKEY_PRODUCT.java)
+
+3/30
+1. Updated the product(book) add page and servlets to help this page get information from the database
+![](README_files/17.jpg)
