@@ -6,7 +6,7 @@
 <div class="main-wrap">
 	<div class="crumb-wrap">
 		<div class="crumb-list">
-			<i class="icon-font"></i><a href="index.jsp">Main</a><span class="crumb-step">&gt;</span><span class="crumb-name">Book</span>
+			<i class="icon-font"></i><a href="admin_index.jsp">Main</a><span class="crumb-step">&gt;</span><span class="crumb-name">Book</span>
 		</div>
 	</div>
 	<div class="result-wrap">
@@ -19,30 +19,25 @@
 				</div>
 			</div>
 			<div class="result-content">
-				<table class="result-tab" width="40%">
+				<table class="result-tab" width="80%">
 					<tr>
 						<th>ID</th>
-						<th>Category Name</th>
+						<th>Product Name</th>
 						<th>Manipulation</th>
 
 					</tr>
-					<c:forEach var = "cate" items = "${cateList}">
-					   <c:if test = "${cate.CATE_PARENT_ID == 0}">
-								<tr>
-									<td>${cate.CATE_ID}</td>
-									<td>${cate.CATE_NAME}</td>
-									<td><a href = "admin_tocateupdate?id=${cate.CATE_ID}">Modify</a> <a href = "javascript:catedel(${cate.CATE_ID})">Delete</a></td>
-								</tr>
-							<c:forEach var = "zcate" items = "${cateList}">
-								<c:if test = "${zcate.CATE_PARENT_ID == cate.CATE_ID}">
-								<tr>
-									<td>${zcate.CATE_ID}</td>
-									<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${zcate.CATE_NAME}</td>
-									<td><a href = "admin_tocateupdate?id=${zcate.CATE_ID}">Modify</a> <a href = "javascript:catedel(${zcate.CATE_ID})">Delete</a></td>
-								</tr>
-								</c:if>
-							</c:forEach>
-						</c:if>
+					<c:forEach var = "p" items = "${plist}">
+						<tr>
+							<td>${p.PRODUCT_ID}</td>
+							<td>
+								<img src = "../images/product/${p.PRODUCT_FILENAME }" width = "80" height = "80">
+								${p.PRODUCT_NAME }
+							</td>
+							<td>
+								<a href = ""> Modify</a>
+								<a href = ""> Delete</a>
+							</td>
+						</tr>
 					</c:forEach>
 				
 				<script>

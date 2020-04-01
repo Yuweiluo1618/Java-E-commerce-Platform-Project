@@ -10,7 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.yuweiluo.entity.LMONKEY_CATEGORY;
+import com.yuweiluo.entity.LMONKEY_PRODUCT;
 import com.yuweiluo.service.CategoryDAO;
+import com.yuweiluo.service.ProductDAO;
 
 /**
  * Servlet implementation class ProductSelect
@@ -24,6 +26,8 @@ public class ProductSelect extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		ArrayList<LMONKEY_PRODUCT> plist = ProductDAO.selectAll();
+		request.setAttribute("plist", plist);
 		request.getRequestDispatcher("admin_product.jsp").forward(request, response);
 	}
 

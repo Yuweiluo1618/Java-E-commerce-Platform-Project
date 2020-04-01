@@ -12,7 +12,7 @@
             </div>
             <div class="result-content">
                 <div class="short-wrap">
-                    <a href="insert.html"><i class="icon-font">&#xe001;</i>New</a>
+                    <a href=""><i class="icon-font">&#xe001;</i>New</a>
                 </div>
             </div>
         </div>
@@ -26,7 +26,7 @@
                         <label class="res-lab">Operation System</label><span class="res-info">WINNT</span>
                     </li>
                     <li>
-                        <label class="res-lab">Running Environment</label><span class="res-info">Apache/2.2.21 (Win64) 0</span>
+                        <label class="res-lab">Running Environment</label><span class="res-info">Apache/2.2.21 (Win64) </span>
                     </li>
                     <li>
                         <label class="res-lab">Author</label><span class="res-info">Yuwei Luo</span>

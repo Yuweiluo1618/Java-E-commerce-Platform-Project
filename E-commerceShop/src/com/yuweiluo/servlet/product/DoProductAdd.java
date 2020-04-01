@@ -82,7 +82,7 @@ public class DoProductAdd extends HttpServlet {
 			PrintWriter out = response.getWriter();
 			out.write("<script>");
 			out.write("alert('Product Add fail');");
-			out.write("location.href='manage/admin_toproductadd';");
+			out.write("location.href='admin_toproductadd';");
 			out.write("</script>");
 		}
 	}

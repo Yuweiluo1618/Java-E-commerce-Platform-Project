@@ -107,4 +107,6 @@ day 7:
 ![](README_files/17.jpg)
 
 3/31
-1. Implemmented the add new product function since this time need upload the file, so import the external jar pakage(smartupload.jar)
+1. Implemmented the add new product function since this time need upload the file to the project, so import the external jar pakage(smartupload.jar)
+2. Implemented the Product(book) information Query and display on the web page.
+![](README_files/20.jpg)
