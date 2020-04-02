@@ -64,5 +64,82 @@ public class ProductDAO {
 			return list;
 
 		}
+		
+		//Query all Products by Fid
+		public static ArrayList<LMONKEY_PRODUCT> selectAllByFid(int fid) {
+			ArrayList<LMONKEY_PRODUCT> list = new ArrayList<LMONKEY_PRODUCT>();
+			ResultSet rs = null;
+			Connection conn = Basedao.getConn();
+			PreparedStatement ps = null;
+			try {
+				String sql = "select * from lmonkey_product where PRODUCT_FID = ?";
+				ps = conn.prepareStatement(sql);
+				ps.setInt(1, fid);
+				rs = ps.executeQuery();
+				while (rs.next()) {
+					LMONKEY_PRODUCT p = new LMONKEY_PRODUCT(
+								rs.getInt("PRODUCT_ID"),
+								rs.getString("PRODUCT_NAME"),
+								rs.getString("PRODUCT_DESCRIPTION"),
+								rs.getInt("PRODUCT_PRICE"),
+								rs.getInt("PRODUCT_STOCK"),
+								rs.getInt("PRODUCT_FID"),
+								rs.getInt("PRODUCT_CID"),
+								rs.getString("PRODUCT_FILENAME")
+							
+							);
+
+					list.add(p);
+				}
+
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} finally {
+				Basedao.closeAll(rs, ps, conn);
+			}
+
+			return list;
+
+		}
+		
+		//Query all Products by Cid
+		public static ArrayList<LMONKEY_PRODUCT> selectAllByCid(int cid) {
+			ArrayList<LMONKEY_PRODUCT> list = new ArrayList<LMONKEY_PRODUCT>();
+			ResultSet rs = null;
+			Connection conn = Basedao.getConn();
+			PreparedStatement ps = null;
+			try {
+				String sql = "select * from lmonkey_product where PRODUCT_CID = ?";
+				ps = conn.prepareStatement(sql);
+				ps.setInt(1, cid);
+				rs = ps.executeQuery();
+				while (rs.next()) {
+					LMONKEY_PRODUCT p = new LMONKEY_PRODUCT(
+								rs.getInt("PRODUCT_ID"),
+								rs.getString("PRODUCT_NAME"),
+								rs.getString("PRODUCT_DESCRIPTION"),
+								rs.getInt("PRODUCT_PRICE"),
+								rs.getInt("PRODUCT_STOCK"),
+								rs.getInt("PRODUCT_FID"),
+								rs.getInt("PRODUCT_CID"),
+								rs.getString("PRODUCT_FILENAME")
+							
+							);
+
+					list.add(p);
+				}
+
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} finally {
+				Basedao.closeAll(rs, ps, conn);
+			}
+
+			return list;
+
+		}
+
 
 }

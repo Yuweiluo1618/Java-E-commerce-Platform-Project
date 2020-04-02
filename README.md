@@ -110,3 +110,8 @@ day 7:
 1. Implemmented the add new product function since this time need upload the file to the project, so import the external jar pakage(smartupload.jar)
 2. Implemented the Product(book) information Query and display on the web page.
 ![](README_files/20.jpg)
+
+4/1
+1. Updated the fron-end page and implemented the Servlet to retrive traverse and display the general product Informatiom
+![](README_files/21.jpg)
+![](README_files/22.jpg)

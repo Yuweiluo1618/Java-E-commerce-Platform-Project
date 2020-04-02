@@ -9,8 +9,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+
 import com.yuweiluo.entity.LMONKEY_CATEGORY;
+import com.yuweiluo.entity.LMONKEY_PRODUCT;
 import com.yuweiluo.service.CategoryDAO;
+import com.yuweiluo.service.ProductDAO;
 
 /**
  * Servlet implementation class SelectProductList
@@ -32,15 +35,19 @@ public class SelectProductList extends HttpServlet {
 		String cid = request.getParameter("cid");
 		
 		int id = 0;
+		ArrayList<LMONKEY_PRODUCT> list = null;
 		if(fid != null) {
 			id = Integer.parseInt(fid);
+			list = ProductDAO.selectAllByFid(id);
 		}
 		
 		if(cid != null) {
 			id = Integer.parseInt(cid);
+			list = ProductDAO.selectAllByCid(id);
 		}
 		
 		request.setAttribute("title", CategoryDAO.selectById(id).getCATE_NAME());
+		request.setAttribute("list",list);
 		
 		request.getRequestDispatcher("productlist.jsp").forward(request, response);
 	}
