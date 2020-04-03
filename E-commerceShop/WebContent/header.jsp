@@ -29,8 +29,7 @@
         </div>
         <ul class="clearfix" id="bott">
             <li><a href="indexselect">Main</a></li>
-           
-           <c:forEach var = "f" items = "${flist}">
+            <c:forEach var = "f" items = "${flist}">
             	<li><a href="selectproductlist?fid=${f.CATE_ID}">${f.CATE_NAME }</a>
                 	<div class="sList2">
                     	<div class="clearfix">
