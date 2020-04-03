@@ -120,3 +120,6 @@ day 7:
 1. Implemented the prduct detail page. Coded the Java Servlet to retrive the product information from the database and dispaly on the web page.
 ![](README_files/23.jpg)
 ![](README_files/24.jpg)
+
+2. Added product related recommendation function in each product detail page
+![](README_files/25.jpg)

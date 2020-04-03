@@ -40,6 +40,12 @@ public class SelectProductView extends HttpServlet {
 			request.setAttribute("p", p);
 		}
 		
+		if(p!= null) {
+			int cid = p.getPRODUCT_CID();
+			ArrayList<LMONKEY_PRODUCT> classlist = ProductDAO.selectAllByCid(cid);
+			request.setAttribute("classlist", classlist);
+		}
+		
 		
 		request.getRequestDispatcher("productview.jsp").forward(request, response);
 	}

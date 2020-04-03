@@ -134,32 +134,20 @@
             </div>
         </div>
     </div>
-    <div class="msgR fr"><h4>为你推荐</h4>
-        <div class="seeList"><a href="#">
+    <div class="msgR fr" style = "width :200px;"><h4>Recommendation</h4>
+        <div class="seeList">
+        <c:forEach var = "cp" items = "${classlist }">
+        <a href="selectproductview?id=${cp.PRODUCT_ID }">
             <dl>
-                <dt><img src="img/temp/see01.jpg"></dt>
-                <dd>【最家】复古文艺风玻璃花瓶</dd>
-                <dd>￥193.20</dd>
+                <dt><img src="images/product/${cp.PRODUCT_FILENAME}" width="150px"></dt>
+                <dd>${cp.PRODUCT_NAME}</dd>
+                <dd>$${cp.PRODUCT_PRICE }</dd>
             </dl>
-        </a><a href="#">
-            <dl>
-                <dt><img src="img/temp/see02.jpg"></dt>
-                <dd>【最家】复古文艺风玻璃花瓶</dd>
-                <dd>￥193.20</dd>
-            </dl>
-        </a><a href="#">
-            <dl>
-                <dt><img src="img/temp/see03.jpg"></dt>
-                <dd>【最家】复古文艺风玻璃花瓶</dd>
-                <dd>￥193.20</dd>
-            </dl>
-        </a><a href="#">
-            <dl>
-                <dt><img src="img/temp/see04.jpg"></dt>
-                <dd>【最家】复古文艺风玻璃花瓶</dd>
-                <dd>￥193.20</dd>
-            </dl>
-        </a></div>
+        </a>
+       </c:forEach>
+      
+        
+        </div>
     </div>
 </div>
 <div class="like"><h4>猜你喜欢</h4>
