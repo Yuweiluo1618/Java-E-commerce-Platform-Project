@@ -122,4 +122,5 @@ day 7:
 ![](README_files/24.jpg)
 
 2. Added product related recommendation function in each product detail page
+
 ![](README_files/25.jpg)
