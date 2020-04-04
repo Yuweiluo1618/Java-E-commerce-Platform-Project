@@ -122,9 +122,11 @@ day 7:
 ![](README_files/24.jpg)
 
 2. Added product related recommendation function in each product detail page
+3. coded the Java Servlet to query the similar product and display in front end recommendation section
 
 ![](README_files/25.jpg)
 
 4/3
 1. Added the recent view product to the front-end page(5 recent products)
+2. Coded Java Servlet to save the product view record and query the database to display the recent view product 
 ![](README_files/26.jpg)
