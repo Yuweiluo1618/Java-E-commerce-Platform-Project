@@ -143,5 +143,41 @@ public class ProductDAO {
 		return p;
 
 	}
+	
+	// Query all Products by ids
+	public static ArrayList<LMONKEY_PRODUCT> selectAllById(ArrayList<Integer> ids) {
+		ArrayList<LMONKEY_PRODUCT> lastlylist = new ArrayList<LMONKEY_PRODUCT>();
+		LMONKEY_PRODUCT p = null;
+		ResultSet rs = null;
+		Connection conn = Basedao.getConn();
+		PreparedStatement ps = null;
+		try {
+			for (int i = 0; i < ids.size(); i++) {
+				String sql = "select * from lmonkey_product where PRODUCT_ID = ?";
+				ps = conn.prepareStatement(sql);
+				ps.setInt(1, ids.get(i));
+				rs = ps.executeQuery();
+				while (rs.next()) {
+					p = new LMONKEY_PRODUCT(rs.getInt("PRODUCT_ID"), rs.getString("PRODUCT_NAME"),
+							rs.getString("PRODUCT_DESCRIPTION"), rs.getInt("PRODUCT_PRICE"), rs.getInt("PRODUCT_STOCK"),
+							rs.getInt("PRODUCT_FID"), rs.getInt("PRODUCT_CID"), rs.getString("PRODUCT_FILENAME")
+
+					);
+
+					lastlylist.add(p);
+				}
+
+			}
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			Basedao.closeAll(rs, ps, conn);
+		}
+
+		return lastlylist;
+
+	}
 
 }

@@ -15,8 +15,9 @@
 <div class="banner"><a href="#"><img src=""/></a></div>
 <!-----------------address------------------------------->
 <div class="address">
-    <div class="wrapper clearfix"><a href="indexselect">Main</a><span>/</span><a
-            href="flowerDer.html"></a><span>/</span><a href="proList.html" class="on">${title}</a></div>
+    <div class="wrapper clearfix">
+    		<a href="indexselect">Main</a><span>/</span>
+            <a href="proList.html" class="on">${title}</a></div>
 </div><!-------------------current---------------------->
 <div class="current">
     <div class="wrapper clearfix"><h3 class="fl">${title}</h3>

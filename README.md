@@ -124,3 +124,7 @@ day 7:
 2. Added product related recommendation function in each product detail page
 
 ![](README_files/25.jpg)
+
+4/3
+1. Added the recent view product to the front-end page(5 recent products)
+![](README_files/26.jpg)

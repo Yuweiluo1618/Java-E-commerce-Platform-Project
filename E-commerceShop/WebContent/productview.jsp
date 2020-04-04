@@ -12,9 +12,9 @@
 <%@ include file = "header.jsp" %>
 <!-----------------address------------------------------->
 <div class="address">
-    <div class="wrapper clearfix"><a href="indexselect">Main</a><span>/</span><a
-            href="flowerDer.html"></a><span>/</span><a href="proList.html"></a><span>/</span><a href="#"
-                                                                                                        class="on">${p.PRODUCT_NAME}</a>
+    <div class="wrapper clearfix"><a href="indexselect">Main</a><span>/</span>
+            <a href="selectproductlist?cid=${cate.CATE_ID}">${cate.CATE_NAME}</a><span>/</span>
+            <a href="#" class="on">${p.PRODUCT_NAME}</a>
     </div>
 </div><!-----------------------Detail------------------------------>
 <div class="detCon">
@@ -150,74 +150,28 @@
         </div>
     </div>
 </div>
-<div class="like"><h4>猜你喜欢</h4>
+<div class="like"><h4>Recently View</h4>
     <div class="bottom">
         <div class="hd"><span class="prev"><img src="img/temp/prev.png"></span><span class="next"><img
                 src="img/temp/next.png"></span></div>
         <div class="imgCon bd">
             <div class="likeList clearfix">
-                <div><a href="proDetail.html">
-                    <dl>
-                        <dt><img src="img/temp/like01.jpg"></dt>
-                        <dd>【最家】复古文艺风玻璃花瓶</dd>
-                        <dd>￥193.20</dd>
-                    </dl>
-                </a><a href="proDetail.html">
-                    <dl>
-                        <dt><img src="img/temp/like02.jpg"></dt>
-                        <dd>【最家】复古文艺风玻璃花瓶</dd>
-                        <dd>￥193.20</dd>
-                    </dl>
-                </a><a href="proDetail.html">
-                    <dl>
-                        <dt><img src="img/temp/like03.jpg"></dt>
-                        <dd>【最家】复古文艺风玻璃花瓶</dd>
-                        <dd>￥193.20</dd>
-                    </dl>
-                </a><a href="proDetail.html">
-                    <dl>
-                        <dt><img src="img/temp/like04.jpg"></dt>
-                        <dd>【最家】复古文艺风玻璃花瓶</dd>
-                        <dd>￥193.20</dd>
-                    </dl>
-                </a><a href="proDetail.html" class="last">
-                    <dl>
-                        <dt><img src="img/temp/like05.jpg"></dt>
-                        <dd>【最家】复古文艺风玻璃花瓶</dd>
-                        <dd>￥193.20</dd>
-                    </dl>
-                </a></div>
-                <div><a href="proDetail.html">
-                    <dl>
-                        <dt><img src="img/temp/like01.jpg"></dt>
-                        <dd>【最家】复古文艺风玻璃花瓶</dd>
-                        <dd>￥193.20</dd>
-                    </dl>
-                </a><a href="proDetail.html">
-                    <dl>
-                        <dt><img src="img/temp/like02.jpg"></dt>
-                        <dd>【最家】复古文艺风玻璃花瓶</dd>
-                        <dd>￥193.20</dd>
-                    </dl>
-                </a><a href="proDetail.html">
-                    <dl>
-                        <dt><img src="img/temp/like03.jpg"></dt>
-                        <dd>【最家】复古文艺风玻璃花瓶</dd>
-                        <dd>￥193.20</dd>
-                    </dl>
-                </a><a href="proDetail.html">
-                    <dl>
-                        <dt><img src="img/temp/like04.jpg"></dt>
-                        <dd>【最家】复古文艺风玻璃花瓶</dd>
-                        <dd>￥193.20</dd>
-                    </dl>
-                </a><a href="proDetail.html" class="last">
-                    <dl>
-                        <dt><img src="img/temp/like05.jpg"></dt>
-                        <dd>【最家】复古文艺风玻璃花瓶</dd>
-                        <dd>￥193.20</dd>
-                    </dl>
-                </a></div>
+                <div>
+
+				<c:forEach var="lp" items="${lastlylist }">
+						<a href="selectproductview?id=${lp.PRODUCT_ID }">
+							<dl>
+								<dt>
+									<img src="images/product/${lp.PRODUCT_FILENAME}" width="150px">
+									</dt>
+									<dd>${lp.PRODUCT_NAME}</dd>
+									<dd>$${lp.PRODUCT_PRICE }</dd>
+								</dl>
+							</a>
+				</c:forEach>
+
+                
+                </div>
             </div>
         </div>
     </div>

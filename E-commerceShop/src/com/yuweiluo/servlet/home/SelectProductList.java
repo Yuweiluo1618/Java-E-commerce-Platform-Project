@@ -34,6 +34,7 @@ public class SelectProductList extends HttpServlet {
 		String fid = request.getParameter("fid");
 		String cid = request.getParameter("cid");
 		
+		
 		int id = 0;
 		ArrayList<LMONKEY_PRODUCT> list = null;
 		if(fid != null) {
