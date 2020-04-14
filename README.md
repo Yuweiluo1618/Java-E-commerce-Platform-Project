@@ -130,3 +130,9 @@ day 7:
 1. Added the recent view product to the front-end page(5 recent products)
 2. Coded Java Servlet to save the product view record and query the database to display the recent view product 
 ![](README_files/26.jpg)
+
+4/13
+1. Create the cart table and immport to the Mysql database
+
+![](README_files/27.jpg)
+2. Coded the part of the add to cart function(insert sql to cart table) by using Java Servlet.

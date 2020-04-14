@@ -38,16 +38,31 @@
                         <p class="fl"><img src="images/product/${p.PRODUCT_FILENAME}" alt="" data-src="images/product/${p.PRODUCT_FILENAME}"></p>
                     </div>
                     <p>Quantity&nbsp;&nbsp;Stock<span>&nbsp;${p.PRODUCT_STOCK}</span>&nbsp;piece</p>
-                    <div class="num clearfix"><img class="fl sub" src="img/temp/sub.jpg"><span class="fl" contentEditable="true">1</span>
+                    <div class="num clearfix">
+                    <img class="fl sub" src="img/temp/sub.jpg">
+                    <span id = "count" class="fl" contentEditable="true">1</span>
                     <img class="fl add" src="img/temp/add.jpg">
                     <p class="please fl">请选择商品属性!</p></div>
                 </div>
-                <div class="btns clearfix"><a href="#2"><p class="buy fl">Buy</p></a><a href="#2">
-                <p class="cart fr"> Add to cart</p></a></div>
+                <div class="btns clearfix">
+                <a href="javascript: shopAdd(${p.PRODUCT_ID}, 'z')"><p class="buy fl">Buy</p></a>
+                <a href="javascript: shopAdd(${p.PRODUCT_ID}, 's')"><p class="cart fr"> Add to cart</p></a>
+                </div>
             </div>
         </div>
     </div>
 </div>
+
+<script>
+function shopAdd(id, url){
+	var count =  document.getElementById("count").innerHTML;
+	location.href ='cartadd?id='+id+'&count='+count+'&url'+url;
+	
+}
+
+
+
+</script>
 <div class="introMsg wrapper clearfix">
     <div class="msgL fl">
         <div class="msgTit clearfix"><a class="on">商品详情</a><a>所有评价</a></div>

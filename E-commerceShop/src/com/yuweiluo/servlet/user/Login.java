@@ -33,7 +33,7 @@ public class Login extends HttpServlet {
 			LMONKEY_USER user = UserDAO.selectAdmin(username,password);
 			session.setAttribute("name", user);
 			session.setAttribute("isLogin", "1");
-			response.sendRedirect("index.jsp");
+			response.sendRedirect("indexselect");
 			
 			
 		}else {

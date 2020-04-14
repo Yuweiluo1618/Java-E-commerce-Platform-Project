@@ -46,3 +46,19 @@ CREATE TABLE `lmonkey_product` (
   PRODUCT_FILENAME varchar(200) default null,
   PRIMARY KEY (`PRODUCT_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+//cart Table
+DROP TABLE IF EXISTS `lmonkey_cart`;
+CREATE TABLE `lmonkey_cart` (
+	cart_id int(11) not null auto_increment,
+  	cart_p_filename varchar(128) default null,
+	cart_p_name varchar(64) default null,
+	cart_p_price decimal(10,2) default null,
+	cart_quantity int(11) default null,
+	cart_p_stock int(11) default null,
+	cart_p_id int(11) default null,
+	cart_u_id varchar(64) default null,
+	cart_valid int(11) default null,
+	PRIMARY KEY (`cart_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
