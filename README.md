@@ -133,6 +133,6 @@ day 7:
 
 4/13
 1. Create the cart table and immport to the Mysql database
-
+2. Create Cart Java Bean
 ![](README_files/27.jpg)
-2. Coded the part of the add to cart function(insert sql to cart table) by using Java Servlet.
+3. Coded the part of the add to cart function(insert sql to cart table) by using Java Servlet.
