@@ -56,7 +56,7 @@
 <script>
 function shopAdd(id, url){
 	var count =  document.getElementById("count").innerHTML;
-	location.href ='cartadd?id='+id+'&count='+count+'&url'+url;
+	location.href ='cartadd?id='+id+'&count='+count+'&url='+url;
 	
 }
 
@@ -177,7 +177,7 @@ function shopAdd(id, url){
 						<a href="selectproductview?id=${lp.PRODUCT_ID }">
 							<dl>
 								<dt>
-									<img src="images/product/${lp.PRODUCT_FILENAME}" width="150px">
+									<img src="images/product/${lp.PRODUCT_FILENAME}"  width="150px" >
 									</dt>
 									<dd>${lp.PRODUCT_NAME}</dd>
 									<dd>$${lp.PRODUCT_PRICE }</dd>
@@ -191,11 +191,11 @@ function shopAdd(id, url){
         </div>
     </div>
 </div><!--返回顶部-->
-<div class="gotop"><a href="cart.html">
+<div class="gotop"><a href="showcart">
     <dl class="goCart">
         <dt><img src="img/gt1.png"/></dt>
-        <dd>去购<br/>物车</dd>
-        <span>1</span></dl>
+        <dd>go<br/>cart</dd>
+        <span></span></dl>
 </a><a href="#" class="dh">
     <dl>
         <dt><img src="img/gt2.png"/></dt>

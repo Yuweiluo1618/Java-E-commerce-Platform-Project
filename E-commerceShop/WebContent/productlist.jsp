@@ -75,7 +75,7 @@
         </div>
     </div>
     <a class="more" href="proDetail.html">查看更多细节</a></div><!--返回顶部-->
-<div class="gotop"><a href="cart.html">
+<div class="gotop"><a href="showcart">
     <dl class="goCart">
         <dt><img src="img/gt1.png"/></dt>
         <dd>去购<br/>物车</dd>

@@ -133,6 +133,11 @@ day 7:
 
 4/13
 1. Create the cart table and immport to the Mysql database
-2. Create Cart Java Bean
 ![](README_files/27.jpg)
+
+2. Create Cart Java Bean
 3. Coded the part of the add to cart function(insert sql to cart table) by using Java Servlet.
+
+4/15
+1. Coded the fron-end part of the shopping cart, customer can check their product in the front-end page.
+![](README_files/28.jpg)
